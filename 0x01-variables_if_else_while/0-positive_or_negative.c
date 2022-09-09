@@ -24,7 +24,7 @@ int main(void)
 	}
 	if (n < 0)
 	{
-		printf("%d: is negtive\n", n)
+		printf("%d: is negtive\n", n);
 	}
 	return (0);
 }
