@@ -11,7 +11,7 @@ int main(void)
 
 	if (i <= 7)
 	{
-		_putchar(i);
+		_putchar(c[i]);
 	}
 	_putchar('\n');
 	return (0);
