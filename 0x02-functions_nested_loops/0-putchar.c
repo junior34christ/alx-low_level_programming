@@ -3,21 +3,22 @@
  */
 
 #include "main.h"
+
 /**
- * main - prints _putchar, followed by a new line
+ * main - prints _putchar, followed by a new line.
  *
- * Return: Always 0
+ * Return: Always 0.
  */
 
-int main(void)
+int _putchar(char c)
 {
 
-		char [] = "_putchar";
+		char c[] = "_putchar";
 		int i;
 
-		for (i = 0; i <= 7; i++)
+		for (i = 0; i <= 7; i++);
 		{
-			putchar([i]);
+			_putchar([i]);
 		}
 		_putchar('\n');
 		return (0);
