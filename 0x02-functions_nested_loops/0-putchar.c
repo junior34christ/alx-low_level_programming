@@ -7,23 +7,21 @@
 /**
  * main - prints _putchar, followed by a new line.
  *
- * Return: always 0.
+ * Description; print _putchar
+ *
+ * Return: always 0 (Success);
  */
-
-#include "main.h"
 
 int main(void)
 {
-	        char *c = "_putchar";
+	int tab[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
+	int i;
+	
+	for (i = 0; i < 8, i++)
+	{
+		_putchar(tab[i]);
+	}
+	_putchar(10);
 
-			while (*c)
-		{
-		        _putchar(*c);
-		        c++;
-		}
-
-		_putchar('\n');
-
-		return (0);
-
+	return (0);
 }
