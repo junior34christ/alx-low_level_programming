@@ -7,19 +7,23 @@
 /**
  * main - prints _putchar, followed by a new line.
  *
- * Return: Always 0.
+ * Return: always 0.
  */
 
-int _putchar(char c)
+#include "main.h"
+
+int main(void)
 {
+	        char *c = "_putchar";
 
-		char c[] = "_putchar";
-		int i;
-
-		for (i = 0; i <= 7; i++);
+			while (*c)
 		{
-			_putchar([i]);
+		        _putchar(*c);
+		        c++;
 		}
+
 		_putchar('\n');
+
 		return (0);
+
 }
