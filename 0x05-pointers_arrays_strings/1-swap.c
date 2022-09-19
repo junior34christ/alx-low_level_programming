@@ -2,9 +2,9 @@
 /**
  * swap_int - swap two integers
  *
- * @n: first integer
+ * @a: first integer
  *
- * @n: second integer
+ * @b: second integer
  *
  * Return: nothing
  */
