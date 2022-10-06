@@ -1,2 +1,1 @@
-Alors on va commencer avec le langage C
-c'est partir pour le prémier code 
+0x00-hello_world
