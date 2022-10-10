@@ -10,6 +10,7 @@ alx-low_level_programming
 7) 0x07-pointers_arrays_strings
 8) 0x08-recursion
 9) 0x09-static_libraries
-A) 0x0A-argc_argv
-B) 0x0B-malloc_free
-C) 0x0C-more_malloc_free
+10) 0x0A-argc_argv
+11) 0x0B-malloc_free
+12) 0x0C-more_malloc_free
+13) 0x0D-preprocessor
