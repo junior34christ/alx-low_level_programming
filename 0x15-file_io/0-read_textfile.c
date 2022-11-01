@@ -1,47 +1,42 @@
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include "main.h"
 
 /**
- * read_textfile - function that reads a text file and prints it to the POSIX
- * standard output
- * @filename: file to read
- * @letters: number of letters it should read and print
- * Return: actual numbers it could read and print
+ * read_textfile - Reads a text file and prints it to the POSIX standard output
+ * @filename: The name of the text file
+ * @letters: The number of letters it should read and print
+ *
+ * Return: The actual number of letters it could read and print, otherwise 0
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, fd_read, fd_write;
-	char *buff;
+	ssize_t n = 0;
+	int fd, a;
+	void *buf = malloc(sizeof(char) * 2);
+	struct stat *file_info = malloc(sizeof(struct stat));
 
-	if (filename == NULL)
+	if (filename == NULL || buf == NULL)
 		return (0);
-	buff = malloc(sizeof(char) * letters);
-	if (buff == NULL)
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
 		return (0);
-	fd = open(filename, O_RDWR);
-	if (fd == -1)
+	fstat(fd, file_info);
+	for (n = 0; n < (ssize_t)letters && n < (ssize_t)file_info->st_size; n++)
+	for (n = 0; n < (ssize_t)letters; n++)
 	{
-		free(buff);
-		return (0);
+		a = read(fd, buf, 1);
+		if (a == 0)
+			break;
+		a = write(STDOUT_FILENO, buf, 1);
+		if (a != 1)
+			return (0);
 	}
-	fd_read = read(fd, buff, letters);
-	if (fd_read == -1)
-		return (0);
-	fd_write = write(STDOUT_FILENO, buff, fd_read);
-	if (fd_write == -1)
-	{
-		free(buff);
-		return (0);
-	}
-	if (fd_read != fd_write)
-		return (0);
-	free(buff);
 	close(fd);
-	return (fd_write);
+	free(file_info);
+	free(buf);
+	return (n);
 }
