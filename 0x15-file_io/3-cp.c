@@ -17,6 +17,7 @@
 int main(int argc, char *argv[])
 {
 	int from_fd, to_fd;
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -62,6 +63,7 @@ void copy_contents(int from_fd, int to_fd, char *src_file, char *dest_file)
 {
 	int i, c, buf_size = 1024;
 	void *buf = malloc(sizeof(char) * buf_size);
+
 	if (buf != NULL)
 	{
 		for (i = 0; ; i += buf_size)
